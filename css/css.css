@@ -1,0 +1,210 @@
+body{
+	padding-top:30px;
+}
+
+		/****************** start tool box ************/
+.options-box{
+	z-index:9999;
+	position:fixed;
+	top:100px;
+	left:0;
+}
+
+.options-box .color-options{
+	display:none;
+	float:left;
+	background:#ccc;
+	color:#111;
+	padding:10px;
+	width:200px;
+}
+
+.options-box .color-options ul li{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+}
+.options-box .gear-check{
+	float:left;
+	cursor:pointer;
+
+}
+		/****************** end tool box ************/
+
+		/***************** start navbar ************/
+.navbar {
+	min-height:70px;
+}
+
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover,
+ .navbar-inverse .navbar-nav > .active > a:focus{
+ 	
+ }
+
+.navbar-inverse .navbar-nav > li > a{
+	color:#bbb; 
+	padding-top:15px;
+	padding-bottom:15px;
+	font-size:16px;
+}
+
+.navbar-inverse .navbar-brand{
+	color:#bbb; 
+	font-size:30px;
+	line-height:30px;
+}
+
+.navbar-inverse .navbar-brand span{
+	
+}
+
+.dropdown-menu{
+	background-color:#333;
+	min-width:200px;
+
+}
+
+.navbar-right .dropdown-menu
+{
+	left:0;
+	right:auto; 
+} 
+
+.dropdown-menu > li > a{
+	color:#fff;
+	padding:7px 20px;
+	transition: padding 0.5s ease;
+}
+
+
+
+
+.dropdown-menu > li >a:hover,
+.dropdown-menu > li> a:focus{
+	color:#fff;
+	padding-left:30px;
+}
+ 
+.dropdown-menu .divider{
+	background-color:#871818;
+}
+
+
+
+.navbar-toggle {
+	margin-top:18px;
+}
+
+	/********************** end navbar ******************/
+
+
+.login-form{	
+	clear:both;
+	overflow:hidden;
+	background-image:url('../team.jpg');
+	min-height:738px;
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+.login-form .cover {
+	clear:both;
+	overflow:hidden;
+	position:absolute;
+	top:30%;
+	left:38%;
+    background:rgba(2,2,2,0.8);
+    text-align:center;
+    padding:35px;
+
+}
+
+.login-form .cover h1 {
+	color:#fff;
+	font-size:52px;
+	font-weight:bold;
+	margin-top:35px;
+    
+}
+
+.login-form .cover form 
+{
+	padding:25px;
+}
+.login-form .cover form input
+{
+	display:block;
+	width:250px;
+	margin-bottom:35px;
+	padding:8px 10px;
+	background:none;
+	border:0.2px solid #fff;
+}
+
+
+.login-form .cover form button
+{
+    padding:10px 15px;
+	font-weight:bold;
+    font-size:22px;
+}
+
+ form input,form button:hover
+ {
+	opacity:1;
+	color:#fff;
+}
+
+    /************** end ***************/
+ .signup-form
+ {
+ 	clear:both;
+	overflow:hidden;
+ 	background-image:url('../2.jpg');
+	min-height:738px;
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+ }
+
+ .signup-form .img  
+ {
+ 	clear:both;
+	overflow:hidden;
+ 	position:absolute;
+ 	background:rgba(2,2,2,0.8);
+ 	left:35%;
+ 	top:22%;
+ 	padding:50px;
+ 	text-align:center;
+ }
+.signup-form .img h1 
+{
+	margin-bottom:30px;
+	color:#b2b6c7;
+	font-size:55px;
+}
+
+
+.signup-form .img form input
+{
+	clear:both;
+	overflow:hidden;
+    background:none;
+    border:0.5px solid #fff;
+	display:block;
+	margin-bottom:25px;
+	width:350px;
+	padding:3px 15px 3px 15px;
+}
+
+.signup-form .img form button 
+{
+	font-weight:bold;
+}
+
+/******************* end *************/
