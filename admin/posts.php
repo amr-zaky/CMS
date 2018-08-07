@@ -48,7 +48,7 @@
                                 
                                 <div class="form-group">
                                   <label for="post_edit_title">Post Tilte</label>
-                                  <input type="text" id="post_edit_title" class="form-control">
+                                  <input type="text" id="post_edit_title" class="form-control" >
                                 </div>
 
                                 <div class="form-group">
@@ -149,7 +149,7 @@
                               </div>
 
                               <div class="form-group">
-                                <button class="btn btn-primary" onclick="addpost()">Submit</button>
+                                <button class="btn btn-primary" id="addpostid">Submit</button>
                               </div>
 
                             </form>
@@ -229,7 +229,11 @@
       })
     }
 
-    function addpost(){
+
+    $("#addpostid").click(function(e){
+
+      
+      e.preventDefault();
       var post_title =$("#post_title").val();
       var post_category_id =$("#post_category_id").val();
       var post_author =$("#post_author").val();
@@ -237,28 +241,36 @@
       var post_image =$("#post_image").val();
       var post_tag =$("#post_tag").val();
       var post_contant =$("#post_contant").val();
-      
-    
 
-      
-        $.ajax({
+       $.ajax({
           type:"POST",
-          url:"includes/server-posts.inc.php?p=add",
+          url:"includes/server-posts.inc.php?",
           data:{post_title:post_title, 
                 post_category_id:post_category_id,
                 post_author:post_author, 
                 post_status:post_status,
                 post_image:post_image, 
                 post_tag:post_tag,
-                post_contant:post_contant
+                post_contant:post_contant,
+                "add":''
                },
           success:function(data){
-            
+             alert('Data Added Successfully');
+            $("#post_title").val('');
+            $("#post_category_id").val('');
+            $("#post_author").val('');
+            $("#post_status").val('');
+            $("#post_image").val('');
+            $("#post_tag").val('');
+            $("#post_contant").val('');
+            $("#views").val('');
             $("#views").empty();
             viewposts();
           }      
         });
-    }
+
+    });
+  
 
     function deletepost(id) {
       
@@ -268,7 +280,7 @@
         url:"includes/server-posts.inc.php?p=del",
         data:{id:id},
         success:function(data){
-          
+           alert('Data Deleted Successfully');
           $("#views").empty();
           viewposts();
         }
@@ -278,7 +290,42 @@
 
 
       function dmyfun(id) {
-          
+            
+        $.ajax({
+        type:"POST",
+        url:"includes/server-posts.inc.php",
+        dataType:"json",
+        data:{id:id,"gitdatafromid":''},
+        success:function(data){
+          for (var i = 0; i <Object.keys(data).length; i++)
+          {
+
+
+            $("#post_edit_title").val(data[i]['post_title']);
+            
+
+            $("#post_edit_category_id").val(data[i]['post_category_id']);
+            $("#post_edit_author").val(data[i]['post_author']);
+            $("#post_edit_status").val(data[i]['post_status']);
+
+            
+
+            $("#post_edit_tag").val(data[i]['post_tag']);
+
+            $("#post_edit_contant").val(data[i]['post_contant']);
+
+            
+
+          $("#views").empty();
+          viewposts(); 
+
+          }
+
+        }
+    });
+
+
+
           $("#check").click(function(){
             editpost(id);
           })
@@ -287,7 +334,7 @@
     function editpost(id)
     {
       
-                       
+                 
       var post_title =$("#post_edit_title").val();
       var post_category_id =$("#post_edit_category_id").val();
       var post_author =$("#post_edit_author").val();
@@ -311,7 +358,16 @@
                 post_contant:post_contant
       },
       success:function(data){
-          
+        alert('Data  Edited Successfully');
+          $("#post_edit_title").val('');
+            $("#post_edit_category_id").val('');
+            $("#post_edit_author").val('');
+            $("#post_edit_status").val('');
+            $("#post_edit_image").val('');
+            $("#post_edit_tag").val('');
+            $("#post_edit_contant").val('');
+            $("#views").val('');
+            $("#views").empty();
           $("#views").empty();
           viewposts();       
       }

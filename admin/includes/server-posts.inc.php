@@ -5,8 +5,9 @@ $page=isset($_GET['p'])?$_GET['p']:'';
 
 
 
-if($page =='add')
+if(isset($_POST['add']))
 {
+
 
 	$post_title=$_POST['post_title'];
 	$post_category_id=$_POST['post_category_id'];
@@ -26,7 +27,8 @@ if($page =='add')
 	$post_data=date('y-m-d');
 	$post_comment_count=4;
 	
-
+	if(!empty($post_title))
+	{
 	$sql="INSERT INTO posts(post_title , 
  post_category_id ,
  post_author , 
@@ -43,7 +45,7 @@ if($page =='add')
 
   mysqli_query($conn,$sql);
 
-
+}
 }
 
 
@@ -69,7 +71,8 @@ else if ($page =='edit')
 	$post_data=date('y-m-d');
 	$post_comment_count=6;
 
-
+	if(!empty($post_title))
+	{
 	$sql="UPDATE posts SET
 	 post_title='$post_title' , 
 	 post_category_id='$post_category_id',
@@ -84,6 +87,7 @@ else if ($page =='edit')
 	mysqli_query($conn,$sql);
 
 	echo "Post Edited Successfly";
+}
 	
 }
 
@@ -94,6 +98,22 @@ else if ($page=='del')
 
 		$sql="DELETE FROM posts where post_id='$id'";
 		mysqli_query($conn,$sql);
+}
+
+
+
+elseif (isset($_POST['gitdatafromid'])) {
+	$id=$_POST['id'];
+
+	$sql="SELECT * FROM posts WHERE post_id='$id'";
+	 $res=mysqli_query($conn,$sql);
+	$retdata=array();
+	while ($row=mysqli_fetch_assoc($res)) 
+	{
+		$retdata[]=$row;
+	}
+
+	print_r(json_encode($retdata));
 }
 
  else 
