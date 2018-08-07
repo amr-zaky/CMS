@@ -94,7 +94,9 @@
             url:"includes/server.inc.php",
             data:{nm:name, "add":""},
             success:function(msg){
+              alert("Data Added Successfully");
               $("#here").empty();
+              $("#cat_title").val('');
               viewdata();
             }
         });
@@ -127,7 +129,7 @@
             url:"includes/server.inc.php?p=del",
             data:{id:id},
             success:function(msg){
-              
+              alert("Data Deleted Successfully");
               $("#here").empty();
               viewdata();
             }
@@ -146,8 +148,9 @@
             data:{id:id,title:title},
             success:function(data){
               
-        
+              alert("Data Edited Successfully");
               $("#here").empty();
+              $("#edit_val").val('');
               viewdata();
             }
         });
