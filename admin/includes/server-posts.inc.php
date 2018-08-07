@@ -104,7 +104,7 @@ else if ($page=='del')
  	 $sql="SELECT * FROM posts";
                       $res=mysqli_query($conn,$sql);
                       while($row=mysqli_fetch_assoc($res)) 
-                      {
+                      {	
 
                       		$data[]=$row;
                       }

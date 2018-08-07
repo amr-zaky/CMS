@@ -35,7 +35,7 @@
               </div>
 
               <div class="form-group">
-                <input id="addcat" onclick="savedata()" class="btn btn-danger" type="submit"  name="submit" value="Add Category">
+                <input id="addcat" class="btn btn-danger" type="submit"  name="submit" value="Add Category">
               </div>
 
 
@@ -85,18 +85,23 @@
   </script>
 
     <script>
-      function savedata(){
+      $("#addcat").click(function(e){
+        e.preventDefault();
         var name=$("#cat_title").val();
-            alert($("#cat_title").val());
+            
         $.ajax({
             type:"POST",
-            url:"includes/server.inc.php?p=add",
-            data:{nm:name},
+            url:"includes/server.inc.php",
+            data:{nm:name, "add":""},
             success:function(msg){
-              alert('Sucess insert data');
+              $("#here").empty();
+              viewdata();
             }
         });
-      }
+
+      });
+
+      
 
       function  viewdata() {
         $.ajax({
@@ -122,7 +127,7 @@
             url:"includes/server.inc.php?p=del",
             data:{id:id},
             success:function(msg){
-              alert('Sucess deleted data');
+              
               $("#here").empty();
               viewdata();
             }
@@ -140,7 +145,7 @@
             url:"includes/server.inc.php?p=edit",
             data:{id:id,title:title},
             success:function(data){
-              alert('Sucess Edited data');
+              
         
               $("#here").empty();
               viewdata();

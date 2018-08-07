@@ -4,7 +4,7 @@
 	include_once 'dbh.inc.php';
 $page=isset($_GET['p'])?$_GET['p']:'';
 
-if($page =='add')
+if(isset($_POST["add"]))
 {
 	$name=$_POST['nm'];
 	if(! empty($name))

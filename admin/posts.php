@@ -253,8 +253,7 @@
                 post_contant:post_contant
                },
           success:function(data){
-            alert("Post Added Successfly");
-            alert(data);
+            
             $("#views").empty();
             viewposts();
           }      
@@ -269,7 +268,7 @@
         url:"includes/server-posts.inc.php?p=del",
         data:{id:id},
         success:function(data){
-          alert("Post deleted Successfly");
+          
           $("#views").empty();
           viewposts();
         }
@@ -312,7 +311,7 @@
                 post_contant:post_contant
       },
       success:function(data){
-          alert("Post Edited Successfly");
+          
           $("#views").empty();
           viewposts();       
       }
