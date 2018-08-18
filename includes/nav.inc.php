@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.php">Start Bootstrap</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +15,9 @@
             while ($row = mysqli_fetch_assoc($res))
             {
                 $title=$row['cat_title'];
-                echo "<li> <a class='nav-link' href='#'>{$title}</a> </li>";
+                $id=$row['cat_id'];
+
+                echo "<li><a class='nav-link' href='category.php?c_id=$id'>{$title}</a> </li>";
             }
 
             ?>

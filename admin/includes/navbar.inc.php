@@ -4,6 +4,7 @@
     <a class="navbar-brand" href="index.php">CMS Admin</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+
     </button>
 
     
@@ -44,7 +45,7 @@
 
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="blank.php">
+          <a class="nav-link" href="Comments.php">
             <i class="fa fa-fw fa-file"></i>
             <span class="nav-link-text">Comments</span>
           </a>
