@@ -16,6 +16,12 @@ if(isset($_POST['add']))
 
 	$sql="INSERT INTO comments(comment_post_id,comment_author,comment_email,comment_content,comment_status,comment_date) VALUES('$post_id','$comment_author','$comment_email','$comment','Approved',now())";
 		$res=mysqli_query($conn,$sql);
+
+
+        $sql="UPDATE posts SET post_comment_count=post_comment_count+1 where post_id='$post_id'";
+
+
+        mysqli_query($conn,$sql);
 		
 }
 

@@ -25,7 +25,7 @@ if(isset($_POST['add']))
 	$post_tag =$_POST['post_tag'];
 	$post_contant=$_POST['post_contant'];
 	$post_data=date('y-m-d');
-	$post_comment_count=4;
+	$post_comment_count=0;
 	
 	if(!empty($post_title))
 	{

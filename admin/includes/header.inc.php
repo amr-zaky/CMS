@@ -35,4 +35,4 @@ session_start();
   <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload=" var k1=window.setTimeout('viewdata();',0.5); var k2=window.setTimeout('viewposts();',1); var k3=window.setTimeout('viewcomments()',0.3);">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" onload=" var k1=window.setTimeout('viewdata();',0.5); var k2=window.setTimeout('viewposts();',1); var k3=window.setTimeout('viewcomments()',0.3);var k4=window.setTimeout('viewusers()',0.2);">

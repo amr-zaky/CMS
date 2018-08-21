@@ -8,7 +8,7 @@ include_once 'dbh.inc.php';
 
 	$id=$_POST['id'];
 
-	$sql="SELECT * FROM comments Where comment_post_id='$id' and comment_status='Approved'";
+	$sql="SELECT * FROM comments Where comment_post_id='$id' and comment_status='Approved' ORDER BY comment_id DESC";
 	
 	$res=mysqli_query($conn,$sql);
      while($row=mysqli_fetch_assoc($res)) 

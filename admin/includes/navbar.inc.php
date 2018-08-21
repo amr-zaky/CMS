@@ -65,17 +65,13 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.php">Login Page</a>
+              <a href="users.php">View Users</a>
             </li>
             <li>
-              <a href="register.php">Registration Page</a>
+              <a href="adduser.php">Add User</a>
             </li>
-            <li>
-              <a href="forgot-password.php">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.php">Blank Page</a>
-            </li>
+            
+            
           </ul>
         </li>
 

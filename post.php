@@ -196,7 +196,7 @@ include_once "includes/nav.inc.php";
             for (var i = 0; i <Object.keys(data).length; i++) 
             {
               
-                $("#view").append("<div class='media mb-4' ><img class='d-flex mr-3 rounded-circle' src='http://placehold.it/64x64' alt=''><div class='media-body'><h5 class='mt-0'>"+data[i]['comment_author']+" </h5>"+data[i]['comment_content']+".</div> </div><hr>");  
+                $("#view").append("<div class='media mb-4' ><img class='d-flex mr-3 rounded-circle' src='http://placehold.it/64x64' alt=''><div class='media-body'><h4 class='mt-0'>"+data[i]['comment_author']+"</h4>"+data[i]['comment_content']+". <br><small>"+data[i]['comment_date']+"</small> </div></div><hr>");  
             }
 
           }
