@@ -53,20 +53,40 @@
 
                                 <div class="form-group">
                                   <label for="post_edit_category_id">Post Category ID</label>
-                                  <input type="text" id="post_edit_category_id" class="form-control">
+                                  
                                 </div>
+
+
+
+                                <select id="post_edit_category_id">
+                                <?php 
+                                  $sql="SELECT * from categories";
+                                  $res=mysqli_query($conn,$sql);
+                                  while ($row = mysqli_fetch_assoc($res)) 
+                                  {
+                                    echo "<option value='{$row['cat_id']}'>{$row['cat_title']}</option>";
+                                  }
+                                ?>
+                              </select>
+
 
                                 <div class="form-group">
                                   <label for="post_edit_author">Post Author</label>
                                   <input type="text" id="post_edit_author" class="form-control">
                                 </div>
 
-                                <div class="form-group">
+                                
+
+                                
                                   <label for="post_edit_status">Post Status</label>
-                                  <input type="text" id="post_edit_status" class="form-control">
-                                </div>
+                                  <br>
+                                  <select id="post_edit_status">
+                                    <option value="draft">Draft</option>
+                                    <option value="Active">Active</option>
+                                  </select>
+                              
 
-
+                                    <br>
                                 <div class="form-group">
                                   <label for="post_edit_image">Post Image</label>
                                   <input type="file" id="post_edit_image" class="form-control">
@@ -117,18 +137,36 @@
 
                               <div class="form-group">
                                 <label for="post_category_id">Post Category ID</label>
-                                <input type="text" id="post_category_id" class="form-control">
+                                
                               </div>
+
+
+                              <select id="post_category_id">
+                                <?php 
+                                  $sql="SELECT * from categories";
+                                  $res=mysqli_query($conn,$sql);
+                                  while ($row = mysqli_fetch_assoc($res)) 
+                                  {
+                                    echo "<option value='{$row['cat_id']}'>{$row['cat_title']}</option>";
+                                  }
+                                ?>
+                              </select>
 
                               <div class="form-group">
                                 <label for="post_author">Post Author</label>
                                 <input type="text" id="post_author" class="form-control">
                               </div>
 
-                              <div class="form-group">
-                                <label for="post_status">Post Status</label>
-                                <input type="text" id="post_status" class="form-control">
-                              </div>
+
+
+                              <label for="post_status">Post Status</label>
+                                  <br>
+                                  <select id="post_status">
+                                    <option value="draft">Draft</option>
+                                    <option value="Active">Active</option>
+                                  </select>
+
+
 
 
                               <div class="form-group">
@@ -346,7 +384,7 @@
 
       $.ajax({
         type:"POST",
-      url:"includes/server-posts.inc.php?p=edit",
+      url:"includes/server-posts.inc.php",
       data:{    
                 id:id,
                 post_title:post_title, 
@@ -355,14 +393,14 @@
                 post_status:post_status,
                 post_image:post_image, 
                 post_tag:post_tag,
-                post_contant:post_contant
+                post_contant:post_contant,
+                "edit":''
       },
       success:function(data){
         alert('Data  Edited Successfully');
           $("#post_edit_title").val('');
             $("#post_edit_category_id").val('');
-            $("#post_edit_author").val('');
-            $("#post_edit_status").val('');
+            $("#post_edit_author").val('');            
             $("#post_edit_image").val('');
             $("#post_edit_tag").val('');
             $("#post_edit_contant").val('');

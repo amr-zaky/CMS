@@ -10,13 +10,36 @@
                 <div class="input-group">
                   <input type="text" name="search" class="form-control" placeholder="Search for...">
                   <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="submit" name='submit' >Go!</button>
+                    <button class="btn btn-primary" type="submit" name='submit' >Go!</button>
                   </span>
                 </div>
               </div>
             </form>
           </div>
 
+
+          <!-- Log In Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Log In</h5>
+            <form action="includes/login.inc.php" method="POST">
+              
+              <div class="card-body">
+                <div class="form-group">
+                  <input type="text" name="username" class="form-control" placeholder="User Name">
+                  
+                </div>
+
+                  <div class="input-group">
+                  <input type="password" name="password" class="form-control" placeholder="Password">
+                  <span class="input-group-btn">
+                    <button class="btn btn-danger" type="submit" name='loginsubmit' >Log In</button>
+                  </span>
+                </div>
+
+
+              </div>
+            </form>
+          </div>
 
 
 

@@ -50,7 +50,7 @@ if(isset($_POST['add']))
 
 
 
-else if ($page =='edit')
+else if (isset($_POST['edit']))
 {	
 
 	$post_id=$_POST['id'];
@@ -121,14 +121,17 @@ elseif (isset($_POST['gitdatafromid'])) {
 
  	$data=array();
 
- 	 $sql="SELECT * FROM posts";
+ 	 $sql="SELECT * FROM posts ";
                       $res=mysqli_query($conn,$sql);
                       while($row=mysqli_fetch_assoc($res)) 
                       {	
 
+                      		
                       		$data[]=$row;
+
                       }
 
-                      print_r(json_encode($data));
-
+                     print_r(json_encode($data));
+   
+                
 }

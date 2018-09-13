@@ -10,6 +10,15 @@
 <?php 
 
 session_start();
+
+if(!isset($_SESSION['role']))
+{
+  header("Location:../index.php");
+  exit();
+}
+
+
+
 ?>
 
 
@@ -33,6 +42,7 @@ session_start();
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top" onload=" var k1=window.setTimeout('viewdata();',0.5); var k2=window.setTimeout('viewposts();',1); var k3=window.setTimeout('viewcomments()',0.3);var k4=window.setTimeout('viewusers()',0.2);">

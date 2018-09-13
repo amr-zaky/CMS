@@ -78,7 +78,7 @@
 
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="blank.php">
+          <a class="nav-link" href="profile.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Profile</span>
           </a>
@@ -103,7 +103,11 @@
       <li class="dropdown">
         
         <a href="#" class="dropdown-toggle  nav-link" data-toggle="dropdown">
-          <i class="fa fa-user">Amr</i>
+          <i class="fa fa-user"><?php
+          if(isset($_SESSION['username'])) 
+          echo $_SESSION['username'];
+
+          ?></i>
         <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li>
@@ -113,7 +117,7 @@
           
 
           <li>
-            <a href="#"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
+            <a href="includes/logout.inc.php"><i class="fa fa-fw fa-power-off"></i>Log Out</a>
           </li>
 
         </ul>
@@ -123,7 +127,7 @@
 
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            <i class="fa fa-fw fa-sign-out"></i>Profile</a>
         </li>
       </ul>
     </div>

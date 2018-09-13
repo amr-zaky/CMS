@@ -58,7 +58,7 @@ include_once "includes/nav.inc.php";
             <div class="card-body">
               <h2 class="card-title">Post Title</h2>
               <p class="card-text"><?php  echo $post_contant ?></p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+              <a href="post.php?p_id=<?php echo $post_id;?>" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
               Posted on January 1, 2017 by
